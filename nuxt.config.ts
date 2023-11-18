@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/color-mode', '@nuxtjs/tailwindcss'],
   app: {
     head: {
-      title: 'XmasCalender',
+      title: 'XmasTasks',
     },
   },
   srcDir: 'src/',

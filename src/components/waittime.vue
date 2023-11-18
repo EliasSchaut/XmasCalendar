@@ -1,4 +1,6 @@
-<template>Next Card in {{ time_left }}</template>
+<template>
+  <span>Next Card in {{ time_left }}</span>
+</template>
 
 <script setup lang="ts">
 let time_left = ref('unknown');

@@ -2,8 +2,10 @@
   <button
     :class="[
       available === 0
-        ? 'bg-blue-300 hover:bg-blue-500'
-        : 'bg-amber-300 hover:bg-amber-500',
+        ? 'bg-red-300 hover:bg-red-500'
+        : available === 1
+          ? 'bg-blue-300 hover:bg-blue-500'
+          : 'bg-amber-300 hover:bg-amber-500',
       'w-full justify-center border-2 border-black p-5 align-middle transition ease-in-out hover:scale-95 hover:text-white',
     ]"
   >

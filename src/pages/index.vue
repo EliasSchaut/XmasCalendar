@@ -1,7 +1,7 @@
 <template>
   <div class="flex-row justify-center">
-    <div class="text-3xl font-bold">Xmas Task Calendar</div>
-    <Waittime class="text-3xl font-bold" />
+    <div class="text-3xl font-bold text-gray-100">Xmas Task Calendar</div>
+    <Waittime class="text-gray-200" />
   </div>
   <ul
     role="list"
