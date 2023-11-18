@@ -10,5 +10,12 @@ export default defineEventHandler((event) => {
   if (index < 1 || index > 24) {
     return 'Index out of range';
   }
+
+  const current_timestamp = Math.floor(Date.now() / 1000);
+  // 86400 is the number of seconds in a day
+  if ((index - 1) * 86400 + tasks.start_unix_timestamp > current_timestamp) {
+    return 'Task not yet available';
+  }
+
   return tasks[index] as string;
 });
