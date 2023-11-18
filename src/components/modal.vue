@@ -35,7 +35,7 @@
                 <DialogTitle
                   as="h3"
                   class="text-base font-semibold leading-6 text-gray-900"
-                  >Your task/reward for today:
+                  >Your task for today:
                 </DialogTitle>
                 <div class="mt-2">
                   <p class="text-xl text-gray-600">{{ value }}</p>

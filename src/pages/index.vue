@@ -1,6 +1,6 @@
 <template>
   <div class="flex-row justify-center">
-    <div class="text-3xl font-bold">Xmas Calendar</div>
+    <div class="text-3xl font-bold">Xmas Task Calendar</div>
     <Waittime class="text-3xl font-bold" />
   </div>
   <ul
