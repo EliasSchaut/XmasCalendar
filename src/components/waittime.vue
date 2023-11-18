@@ -1,4 +1,4 @@
-<template>Nächste Karte in {{ time_left }}</template>
+<template>Next Card in {{ time_left }}</template>
 
 <script setup lang="ts">
 let time_left = ref('unknown');
@@ -10,7 +10,7 @@ useFetch('/api/task/waittime').then((data) => {
     (data.data.value - hours_left * 60 * 60) / 60,
   );
   time_left.value = `${
-    hours_left > 0 ? `${hours_left} Stunden` : ``
-  } ${minutes_left} Minuten`;
+    hours_left > 0 ? `${hours_left} hours` : ``
+  } ${minutes_left} minutes`;
 });
 </script>
