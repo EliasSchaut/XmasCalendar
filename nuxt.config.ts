@@ -3,8 +3,8 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/color-mode', '@nuxtjs/tailwindcss'],
   app: {
     head: {
-      title: 'CardDraw'
-    }
+      title: 'XmasCalender',
+    },
   },
   srcDir: 'src/',
   devtools: { enabled: true },
@@ -17,4 +17,4 @@ export default defineNuxtConfig({
     classSuffix: '',
     storageKey: 'nuxt-color-mode',
   },
-})
+});
