@@ -1,5 +1,5 @@
 <template>
-  <span>Next Card in {{ time_left }}</span>
+  <span>Next Task unlocks in {{ time_left }}</span>
 </template>
 
 <script setup lang="ts">
@@ -19,8 +19,8 @@ useFetch('/api/task/waittime').then((data) => {
     (data.data.value - days_left * 60 * 60 * 24 - hours_left * 60 * 60) / 60,
   );
 
-  time_left.value = `${days_left > 0 ? `${days_left} days` : ``}${
-    hours_left > 0 ? ` ${hours_left} hours` : ``
-  }${minutes_left > 0 ? ` ${minutes_left} minutes` : ``}!`;
+  time_left.value = `${days_left > 0 ? `${days_left} day(s)` : ``}${
+    hours_left > 0 ? ` ${hours_left} hour(s)` : ``
+  }${minutes_left > 0 ? ` ${minutes_left} minute(s)` : ``}!`;
 });
 </script>
