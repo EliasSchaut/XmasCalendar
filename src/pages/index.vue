@@ -3,13 +3,15 @@
     <div class="text-3xl font-bold text-gray-100">Xmas Task Calendar</div>
     <Waittime class="text-gray-200" />
   </div>
+  <div>
   <ul
-    class="grid grid-cols-3 justify-space-around"
+    class="grid grid-cols-3"
   >
     <li v-for="i in range(1, 25)" :key="i" class="relative">
       <Imgcard :index="i" :day="permutation(permutation(i))" :onSelect="() => show(permutation(permutation(i)))"/>
     </li>
   </ul>
+</div>
   <Modal ref="modal" />
 </template>
 

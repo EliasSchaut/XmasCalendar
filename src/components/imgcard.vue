@@ -2,18 +2,22 @@
   <img :src="img_source(index, available)" style="width:100%"/>
   <button 
   @click="onSelect()"
+  :class="[available === 2 ? 'bg-amber-300 hover:bg-amber-500' : '',
+      'hover:scale-95 hover:text-white',
+    ]"
   style="position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: #0005;
-  color: white;
-  font-size: 20px;
-  padding: 12px 24px;
+  color: #eee;
+  background-color: #0003;
+  font-size: 3vw;
+  padding: 3vw 5vw;
   cursor: pointer;
-  border-radius: 2px;"
-  :hidden="available==0">{{ day }}</button>
+  border: dashed"
+  :hidden="available==0"
+  >{{ day }}</button>
 </template>
 
 <script lang="ts">
@@ -50,6 +54,7 @@ export default defineComponent({
       required: true,
     },
     onSelect: {
+      required: true,
     }
   },
   methods: {
