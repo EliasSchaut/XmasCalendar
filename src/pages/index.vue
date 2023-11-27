@@ -4,11 +4,10 @@
     <Waittime class="text-gray-200" />
   </div>
   <ul
-    role="list"
-    class="mt-5 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
+    class="grid grid-cols-3 justify-space-around"
   >
     <li v-for="i in range(1, 25)" :key="i" class="relative">
-      <Card :index="i" @click="show(i)" />
+      <Imgcard :index="i" :day="permutation(permutation(i))" :onSelect="() => show(permutation(permutation(i)))"/>
     </li>
   </ul>
   <Modal ref="modal" />
@@ -26,6 +25,10 @@ export default defineComponent({
         this.$refs.modal.show(data.data.value);
       });
     },
+    permutation(i: number): number {
+      //permutate 1 to 24.
+      return [13,7,8,4,5,6,21,22,9,10,11,12,16,17,18,19,20,14,15,1,2,3,23,24][i];
+    }
   },
 });
 </script>
