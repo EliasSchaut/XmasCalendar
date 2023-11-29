@@ -1,23 +1,22 @@
 <template>
-  <img :src="img_source(index, available)" style="width:100%"/>
-  <button 
-  @click="onSelect()"
-  :class="[available === 2 ? 'bg-amber-300 hover:bg-amber-500' : '',
-      'hover:scale-95 hover:text-white',
+  <img
+    :src="img_source(index, available)"
+    style="width: 100%"
+    :alt="`Image for door ${day}`"
+  />
+  <button
+    @click="onSelect()"
+    :class="[
+      available === 2
+        ? 'outline-amber-500 hover:bg-amber-500'
+        : 'outline-blue-500',
+      available === 0 ? 'hidden' : '',
+      'absolute left-1/2 top-1/2 h-2/3 w-1/3 -translate-x-1/2 -translate-y-1/2 bg-[#0003] text-2xl text-[#eee] outline-dashed transition ease-in-out hover:scale-95 hover:text-white',
     ]"
-  style="position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  color: #eee;
-  background-color: #0003;
-  font-size: 3vw;
-  padding: 3vw 5vw;
-  cursor: pointer;
-  border: dashed"
-  :hidden="available==0"
-  >{{ day }}</button>
+  >
+    <Badge v-if="available === 2" class="absolute -right-5 -top-3" animate />
+    {{ day }}
+  </button>
 </template>
 
 <script lang="ts">
@@ -27,8 +26,14 @@ import Badge from '~/components/badge.vue';
 function img_source(n: number, available: number): string {
   let COL_COUNT = 3;
   let row: number = Math.floor((n - 1) / COL_COUNT);
-  let col: number = (n-1) % COL_COUNT;
-  return (available=== 0 ? "/painting_passive/" : "/painting_oil/") + col + "" +  row + ".png";
+  let col: number = (n - 1) % COL_COUNT;
+  return (
+    (available === 0 ? '/painting_passive/' : '/painting_oil/') +
+    col +
+    '' +
+    row +
+    '.png'
+  );
 }
 
 export default defineComponent({
@@ -54,11 +59,12 @@ export default defineComponent({
       required: true,
     },
     onSelect: {
+      type: Function,
       required: true,
-    }
+    },
   },
   methods: {
     img_source,
-  }
+  },
 });
 </script>
