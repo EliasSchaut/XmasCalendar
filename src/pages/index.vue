@@ -10,8 +10,8 @@
       <li v-for="i in range(1, 25)" :key="i" class="relative">
         <Imgcard
           :index="i"
-          :day="permutation(permutation(i))"
-          :onSelect="() => show(permutation(permutation(i)))"
+          :day="permutation(i)"
+          :onSelect="() => show(permutation(i))"
         />
       </li>
     </ul>
@@ -22,6 +22,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { range } from '@antfu/utils';
+import tasks from '~~/tasks';
 
 export default defineComponent({
   methods: {
@@ -33,10 +34,7 @@ export default defineComponent({
     },
     permutation(i: number): number {
       //permutate 1 to 24.
-      return [
-        13, 7, 8, 4, 5, 6, 21, 22, 9, 10, 11, 12, 16, 17, 18, 19, 20, 14, 15, 1,
-        2, 3, 23, 24,
-      ][i - 1];
+      return tasks.permutation[i - 1];
     },
   },
 });

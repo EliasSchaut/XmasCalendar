@@ -23,5 +23,13 @@ export default {
   22: 'Task 22',
   23: 'Task 23',
   24: 'Task 24',
-  start_unix_timestamp: 1700085200, // 1701385200 = 01.12.2023 00:00:00
-} as { [key: number]: string; start_unix_timestamp: number };
+  start_unix_timestamp: 1701385200, // 1701385200 = 01.12.2023 00:00:00
+  permutation: [
+    13, 7, 16, 4, 21, 6, 3, 22, 9, 12, 18, 11, 14, 8, 17, 24, 19, 20, 10, 15, 1,
+    2, 5, 23,
+  ],
+} as {
+  [key: number]: string;
+  start_unix_timestamp: number;
+  permutation: number[];
+};

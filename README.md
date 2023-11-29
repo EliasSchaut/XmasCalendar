@@ -10,10 +10,11 @@ A virtual xmas calender in which you can open 24 doors full of tasks
 6. Run `npm start` in the root directory of this repository.
 
 ## `tasks.ts`
-| Key | Value                                                                                                                      |
-| --- |----------------------------------------------------------------------------------------------------------------------------|
-| `[key: number]` | The task description for the i-th task                                                                                     |
+| Key                    | Value                                                                                                                      |
+|------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| `[key: number]`        | The task description for the i-th task                                                                                     |
 | `start_unix_timestamp` | The unix timestamp for the start of the first task. <br/>Every next task will be unlocked exactly 24h after the last task. |
+| `permutation`          | Array containing the number from 1 to 24 in any order                                                                      |
 
 ## Contributing
 If you want to contribute to this project, feel free to do so. Just fork this repository and create a pull request with your changes.

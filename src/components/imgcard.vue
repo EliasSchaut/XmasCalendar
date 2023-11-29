@@ -11,7 +11,7 @@
         ? 'outline-amber-500 hover:bg-amber-500'
         : 'outline-blue-500',
       available === 0 ? 'hidden' : '',
-      'absolute left-1/2 top-1/2 h-2/3 w-1/3 -translate-x-1/2 -translate-y-1/2 bg-[#0003] text-2xl text-[#eee] outline-dashed transition ease-in-out hover:scale-95 hover:text-white',
+      'absolute left-1/2 top-1/2 h-2/3 w-1/3 -translate-x-1/2 -translate-y-1/2 bg-[#0003] text-2xl font-bold text-[#eee] outline-dashed transition ease-in-out hover:scale-95 hover:text-white',
     ]"
   >
     <Badge v-if="available === 2" class="absolute -right-5 -top-3" animate />
