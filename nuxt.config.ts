@@ -16,10 +16,6 @@ export default defineNuxtConfig({
     storageKey: 'nuxt-color-mode',
   },
 
-  app: {
-    cdnURL: 'https://example.com',
-  },
-
   runtimeConfig: {
     start_unix_timestamp: 1701385200, // 1701385200 = 01.12.2023 00:00:00
     tasks: {
