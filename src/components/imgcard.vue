@@ -20,24 +20,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import Badge from '~/components/badge.vue';
-
-function img_source(n: number, available: number): string {
-  let COL_COUNT = 3;
-  let row: number = Math.floor((n - 1) / COL_COUNT);
-  let col: number = (n - 1) % COL_COUNT;
-  return (
-    (available === 0 ? '/painting_passive/' : '/painting_oil/') +
-    col +
-    '' +
-    row +
-    '.png'
-  );
-}
-
 export default defineComponent({
-  components: { Badge },
   setup(props) {
     const available = ref(0);
     useFetch('/api/task/available/' + props.day).then((data) => {
@@ -64,7 +47,18 @@ export default defineComponent({
     },
   },
   methods: {
-    img_source,
+    img_source(n: number, available: number): string {
+      let COL_COUNT = 3;
+      let row: number = Math.floor((n - 1) / COL_COUNT);
+      let col: number = (n - 1) % COL_COUNT;
+      return (
+        (available === 0 ? '/painting_passive/' : '/painting_oil/') +
+        col +
+        '' +
+        row +
+        '.png'
+      );
+    },
   },
 });
 </script>

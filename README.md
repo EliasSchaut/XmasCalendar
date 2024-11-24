@@ -1,16 +1,16 @@
 # XmasTasks
-A virtual xmas calender in which you can open 24 doors full of tasks
+A virtual Christmas calendar in which you can solve tasks by opening one of the 24 doors
 
 ## Setup
 1. You need to have node.js (20.9 or higher) installed on your machine.
 2. Clone this repository.
-3. Fill `tasks.ts` (see below)
+3. Fill `runtimeConfig` in `nuxt.config.js` (see below).
 4. Run `npm install` in the root directory of this repository.
 5. Run `npm run build` in the root directory of this repository.
 6. Run `npm start` in the root directory of this repository.
 Your instance is now running on `localhost:3000`.
 
-## `tasks.ts`
+## `runtimeConfig`
 | Key                    | Value                                                                                                                      |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------|
 | `[key: number]`        | The task description for the i-th task                                                                                     |
