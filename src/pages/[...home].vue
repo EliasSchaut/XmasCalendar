@@ -22,11 +22,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
 import { range } from '@antfu/utils';
-import tasks from '~~/tasks';
 
 export default defineComponent({
+  setup() {
+    return {
+      tasks_permutation: useRuntimeConfig().public.permutation,
+    };
+  },
   methods: {
     range,
     show(index: number) {
@@ -35,8 +38,7 @@ export default defineComponent({
       });
     },
     permutation(i: number): number {
-      //permutate 1 to 24.
-      return tasks.permutation[i - 1];
+      return this.tasks_permutation[i - 1];
     },
   },
 });

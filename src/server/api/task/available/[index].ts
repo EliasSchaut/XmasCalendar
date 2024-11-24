@@ -1,4 +1,4 @@
-import tasks from '~~/tasks';
+const start_unix_timestamp = useRuntimeConfig().start_unix_timestamp;
 
 /**
  * -1: Invalid index
@@ -19,7 +19,7 @@ export default defineEventHandler((event) => {
 
   // 86400 is the number of seconds in a day
   const current_timestamp = Math.floor(Date.now() / 1000);
-  const unlock_timestamp = (index - 1) * 86400 + tasks.start_unix_timestamp;
+  const unlock_timestamp = (index - 1) * 86400 + start_unix_timestamp;
   if (unlock_timestamp <= current_timestamp) {
     if (unlock_timestamp + 86400 > current_timestamp) {
       return 2;
