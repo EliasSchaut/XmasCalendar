@@ -6,8 +6,9 @@ A virtual xmas calender in which you can open 24 doors full of tasks
 2. Clone this repository.
 3. Fill `tasks.ts` (see below)
 4. Run `npm install` in the root directory of this repository.
-5. Run `npm build` in the root directory of this repository.
+5. Run `npm run build` in the root directory of this repository.
 6. Run `npm start` in the root directory of this repository.
+Your instance is now running on `localhost:3000`.
 
 ## `tasks.ts`
 | Key                    | Value                                                                                                                      |
